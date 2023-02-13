@@ -8,7 +8,9 @@ const Artigo = mongoose.model('artigo')
 
 
 app.use((req, res, next) => {
-    console.log("Acessou o middleware!");
+    // console.log("Acessou o middleware!");
+    res.setHeader("Acess-Control-Allow-Origin", "http://localhost:8080")
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     app.use(cors());
     next();
 })
